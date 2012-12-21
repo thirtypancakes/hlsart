@@ -1,16 +1,17 @@
-##  HLSArt: A latex documentclass for creating reports and essays conforming
-(mostly) to my Psychology Department's reporting style guidelines.
+##  HLSArt: A latex documentclass for creating reports and essays conforming (mostly) to my Psychology Department's reporting style guidelines.
 
 ### Introduction
 
 This documentclass provides an easy way to create documents conforming to my
-department's guidelines. 
+department's guidelines.
 
 ### Some major features of this documentclass:
 
 - Uses Helvetica Neue Light as default font
 
-- Regular font for maths - Double line spacing (except for abstract)
+- Regular font for maths
+
+- Double line spacing (except for abstract)
 
 - 12pt spacing between paragraphs, no indentation
 
