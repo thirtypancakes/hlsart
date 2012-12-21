@@ -1,14 +1,7 @@
 \ProvidesClass{hlsart}
 
-\author{}
-\date{}
-
 % Load standard article class
 \LoadClass[12pt,a4paper]{article}
-
-% Allows user-provided p-number in rhead 
-% Not used because if \pnum is not included we get strange warnings
-% \newcommand{\pnum}[1]{\def\@pnum{#1}}
 
 % Fonts and stuff
 \RequirePackage[UKenglish]{babel}
@@ -27,14 +20,6 @@
 
 % Page margines
 \RequirePackage[top=25mm, left=35mm, right=35mm, bottom=25mm]{geometry}
-
-% Header and footer
-\RequirePackage{fancyhdr}
-% Uncomment if using \pnum command
-% \fancyhead[R]{\@pnum \\ \thepage}
-\fancyhead[R]{}
-\fancyhead[L]{}
-\fancyfoot{}
 
 % Seperate Reference entries by one line
 \patchcmd{\thebibliography}{\sloppy}{\itemsep 12pt \parsep 0pt \sloppy}{}{}
@@ -59,20 +44,20 @@
 % Remove hline under header
 \renewcommand{\headrulewidth}{0pt}
 
-
 % Custom maketitle
 \renewcommand{\maketitle}{
-\begin{singlespace}
-\begin{center}
-    {{\bf \@title}}\\
-\end{center}
-\end{singlespace}
+    \begin{singlespace}
+    \begin{center}
+        {{\bf \@title}}\\
+    \end{center}
+    \end{singlespace}
 \vspace{-1em}
 }
 
-\renewenvironment{abstract}
-{\begin{center}\bfseries \abstractname \vspace{-.5em} \end{center}}
-{\centering \singlespacing \vspace{-1em}}
+\renewenvironment{abstract}{
+    \begin{center}\bfseries \abstractname \vspace{-.5em} \end{center}}
+    {\centering \singlespacing \vspace{-1em}
+}
 
-\doublespacing \pagestyle{fancy} \thispagestyle{fancy} 
+\doublespacing \pagestyle{fancy} \thispagestyle{fancy}
 
