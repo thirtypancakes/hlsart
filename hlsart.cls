@@ -1,21 +1,25 @@
 \ProvidesClass{hlsart}
 
+
+% Pass options to article class
+\DeclareOption* {\PassOptionsToClass{\CurrentOption}{article}}
+
+\ProcessOptions \relax
+
 % Load standard article class
-\LoadClass[12pt,a4paper]{article}
+\LoadClass{article}
 
 % Fonts and stuff
-\RequirePackage[UKenglish]{babel}
 \RequirePackage{amsmath}
 \RequirePackage{mathspec}
-\setmainfont[BoldFont=Helvetica Neue Bold, Ligatures=TeX]{Helvetica Neue Light}
-\setmathfont(Greek)[Lowercase=Regular]{Helvetica Neue Light}
-\setmathfont(Latin)[Lowercase=Regular]{Helvetica Neue Light}
-\setmathsfont(Digits)[Numbers={Proportional}]{Helvetica Neue Light}
+\RequirePackage{polyglossia}
+\setmainlanguage[variant=british]{english}
+
 
 % Table/fig captions
 \RequirePackage[font=small,labelfont=bf]{caption}
 
-% APA citations
+% APA style citations
 \RequirePackage[natbibapa]{apacite}
 
 % Page margines
@@ -42,7 +46,9 @@
 \RequirePackage{graphicx}
 
 % Remove hline under header
-\renewcommand{\headrulewidth}{0pt}
+\RequirePackage{fancyhdr}
+% \renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
 
 % Custom maketitle
 \renewcommand{\maketitle}{
@@ -59,5 +65,5 @@
     {\centering \singlespacing \vspace{-1em}
 }
 
-\doublespacing \pagestyle{fancy} \thispagestyle{fancy}
+\doublespacing \pagestyle{fancy}
 
