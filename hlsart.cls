@@ -9,46 +9,48 @@
 % Load standard article class
 \LoadClass{article}
 
-% Fonts and stuff
-\RequirePackage{amsmath}
-\RequirePackage{mathspec}
-\RequirePackage{polyglossia}
-\setmainlanguage[variant=british]{english}
+% Load Packages
+\RequirePackage{%
+  amsmath,
+  mathspec,
+  setspace,
+  titling,
+  fancyhdr,
+  booktabs,
+  graphicx,
+  csquotes,
+}%
 
+
+% British hyphenation
+\RequirePackage[british]{babel}
 
 % Table/fig captions
 \RequirePackage[font=small,labelfont=bf]{caption}
 
 % APA style citations
-\RequirePackage[natbibapa]{apacite}
+\RequirePackage[style=apa, backend=biber, uniquename=false]{biblatex}
+\DeclareLanguageMapping{british}{british-apa}
 
 % Page margines
-\RequirePackage[top=25mm, left=35mm, right=35mm, bottom=25mm]{geometry}
+\RequirePackage[vmargin=25mm, hmargin=35mm]{geometry}
 
 % Seperate Reference entries by one line
-\patchcmd{\thebibliography}{\sloppy}{\itemsep 12pt \parsep 0pt \sloppy}{}{}
+\setlength{\bibsep}{1em}
 
 % Remove paragraph indentation and seperate by one line
-\RequirePackage{setspace}
 \setlength{\parindent}{0mm}
 \parskip=12pt
 
 % Format for section/subsection
-\RequirePackage{titlesec}
 \titleformat{\section}{\normalsize\bfseries\centering}{}{0em}{}[]
 \titleformat{\subsection}{\normalsize\itshape\raggedright}{\vspace{-1em}}{0em}{\vspace{0em}}[\vspace{-2em}]
 \titlespacing{\section}{0pt}{0pt}{0pt}
 \titlespacing*{\subsection}{12pt}{0pt}{6pt}
 
 
-% Pretty tables/figures
-\RequirePackage{booktabs}
-\RequirePackage{graphicx}
-
 % Remove hline under header
-\RequirePackage{fancyhdr}
-% \renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrulewidth}{0}
 
 % Custom maketitle
 \renewcommand{\maketitle}{
