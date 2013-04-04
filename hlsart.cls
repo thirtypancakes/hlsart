@@ -8,12 +8,13 @@
 
 % Also note that this class will NOT work with LuaLaTeX because it uses mathspec
 % to set math fonts. Change to fontspec/unicode-math to use with LuaLaTeX
+% ------------------------------------------------------------------------------
 
+% Class name
 \ProvidesClass{hlsart}
 
 % Pass options to article class
 \DeclareOption* {\PassOptionsToClass{\CurrentOption}{article}}
-
 \ProcessOptions\relax
 
 % Load standard article class
@@ -36,7 +37,7 @@
 % We adjust protrusion for use with Sans Serif fonts, customise to your needs
 \RequirePackage[factor=1100]{microtype}
 
-% Example {font,math}spec example
+% {font,math}spec example usage
 
 % \setmainfont[Ligatures=TeX]{Helvetica Neue Light}
 % \setmathsfont(Digits,Latin,Greek)
@@ -72,10 +73,11 @@
   {\vspace{0em}}
   [\vspace{-2em}]
 
+% Section/subsection spacing
 \titlespacing{\section}{0pt}{0pt}{0pt}
 \titlespacing*{\subsection}{12pt}{0pt}{12pt}
 
-% Abstract
+% Abstract formatting
 \renewcommand{\abstractnamefont}{\normalfont\large\bfseries}
 \renewcommand{\abstracttextfont}{\centering\singlespacing\normalfont}
 \setlength{\abstitleskip}{-3em}
